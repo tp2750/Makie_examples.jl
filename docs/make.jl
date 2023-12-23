@@ -16,6 +16,7 @@ makedocs(;
     ),
     pages=[
         "Home" => "index.md",
+        "Interactive Histogram" => "interactive_histogram.md",
     ],
 )
 
