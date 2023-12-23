@@ -1,0 +1,7 @@
+using GLMakie
+using Observables
+
+data = rand(1000)
+
+o_bins = Observable(10)
+
