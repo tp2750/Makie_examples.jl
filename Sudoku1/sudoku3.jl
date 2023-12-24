@@ -23,8 +23,8 @@ end
 
 function color_mat!(ax, mat)
   i, j = size(mat)
-  color_mat = mat .+ 1
-  hm = heatmap!(ax, color_mat, color_map = tuple.([:white, :green], .5), colorrange=(1,2), inspectable = false)
+  color_mat = rotr90(mat) 
+  hm = heatmap!(ax, color_mat, color_map = tuple.([:white, :green, :blue]), colorrange = (0,2), alpha = 0.5, inspectable = false)
   translate!(hm, -0.5, -0.5, -1.0)
 end
 
@@ -48,7 +48,7 @@ Axis(ax,     aspect = DataAspect(),
 end
 
 mat = reshape(collect(1:81), 9,9)
-mat2 = reshape([[1]; repeat([0],80)], 9,9)
+mat2 = reshape([[1, 2]; repeat([0],79)], 9,9)
 f = Figure()
 ax1 = mk_axis(f[1,1])
 plot_mat!(ax1,mat)
