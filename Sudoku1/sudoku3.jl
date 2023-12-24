@@ -21,12 +21,19 @@ function plot_mat!(ax,mat)
   end
 end
 
+function color_mat!(ax, mat)
+  i, j = size(mat)
+  color_mat = mat .+ 1
+  hm = heatmap!(ax, color_mat, color_map = tuple.([:white, :green], .5), colorrange=(1,2), inspectable = false)
+  translate!(hm, -0.5, -0.5, -1.0)
+end
+
 function mk_axis(ax)
 Axis(ax,     aspect = DataAspect(),
      xgridcolor = :black,
      ygridcolor = :black,
-     xgridwidth = 2,
-     ygridwidth = 2,
+     xgridwidth = 3,
+     ygridwidth = 3,
      xminorgridcolor = :black,
      yminorgridcolor = :black,
      xminorgridvisible = true,
@@ -34,16 +41,18 @@ Axis(ax,     aspect = DataAspect(),
      xminorticks = IntervalsBetween(3),
      yminorticks = IntervalsBetween(3),
      xticksvisible = false,
-     xticks = ([3,6,9], ["","",""]),
+     xticks = ([0,3,6,9], ["","","",""]),
+     yticksvisible = false,
+     yticks = ([0,3,6,9], ["","","",""]),
      )
 end
 
 mat = reshape(collect(1:81), 9,9)
-
+mat2 = reshape([[1]; repeat([0],80)], 9,9)
 f = Figure()
 ax1 = mk_axis(f[1,1])
 plot_mat!(ax1,mat)
-
+color_mat!(ax1, mat2)
 
 
 f
