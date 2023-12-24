@@ -42,9 +42,11 @@ Axis(ax,     aspect = DataAspect(),
      xminorticks = IntervalsBetween(3),
      yminorticks = IntervalsBetween(3),
      xticksvisible = false,
-     xticks = ([0,3,6,9], ["","","",""]),
+     xticklabelsize = 0.0, 
+     yticklabelsize = 0.0, 
+     #xticks = ([0,3,6,9], ["","","",""]), 
      yticksvisible = false,
-     yticks = ([0,3,6,9], ["","","",""]),
+     #yticks = ([0,3,6,9], ["","","",""]),
      )
 end
 
