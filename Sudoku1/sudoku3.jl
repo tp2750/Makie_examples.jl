@@ -11,7 +11,7 @@ function plot_mat!(ax,mat)
   ylims!(0,j)
   deactivate_interaction!(ax, :rectanglezoom)
 #  hidexdecorations!(ax)
-  register_interaction!(ax1, :my_interaction) do event, axis ## click on a sequence https://docs.makie.org/stable/reference/blocks/axis/#registering_and_deregistering_interactions
+  register_interaction!(ax1, :my_interaction) do event::MouseEvent, axis ## click on a sequence https://docs.makie.org/stable/reference/blocks/axis/#registering_and_deregistering_interactions
     if event.type === MouseEventTypes.leftclick
         pos = event.data
         row = 10 - Int(ceil(pos[2]))
@@ -24,7 +24,8 @@ end
 function color_mat!(ax, mat)
   i, j = size(mat)
   color_mat = rotr90(mat) 
-  hm = heatmap!(ax, color_mat, color_map = tuple.([:white, :green, :blue]), colorrange = (0,2), alpha = 0.5, inspectable = false)
+  hm = heatmap!(ax, color_mat, colormap = tuple.([:white, :green, :blue], 0.25), colorrange = (0,2),  inspectable = false)
+  # hm = heatmap!(ax, color_mat) #, color_map = tuple.([:white]), alpha = 0.5, inspectable = false)
   translate!(hm, -0.5, -0.5, -1.0)
 end
 
