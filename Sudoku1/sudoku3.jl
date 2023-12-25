@@ -57,5 +57,4 @@ ax1 = mk_axis(f[1,1])
 plot_mat!(ax1,mat)
 color_mat!(ax1, mat2)
 
-
 f
