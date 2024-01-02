@@ -55,18 +55,22 @@ function mk_axis(ax)
 Axis(ax,     aspect = DataAspect(),
     xgridcolor = :black,
     ygridcolor = :black,
-    xgridwidth = 2,
-    ygridwidth = 2,
+    xgridwidth = 3,
+    ygridwidth = 3,
     xminorgridcolor = :black,
     yminorgridcolor = :black,
     xminorgridvisible = true,
     yminorgridvisible = true,
-    xminorticks = IntervalsBetween(3),
-    yminorticks = IntervalsBetween(3),
+    xminorticks = IntervalsBetween(base),
+    yminorticks = IntervalsBetween(base),
     xticksvisible = false,
-    xticks = ([3, 6, 9], ["", "", ""]),
+    xticklabelsize = 0.0, 
+    #xticks = ([0, 2, 4], ["", "", ""]),
+#    xticks = ([0, 2, 4]),
     yticksvisible = false,
-    yticks = ([3, 6, 9], ["", "", ""]),
+    yticklabelsize = 0.0, 
+    #yticks = ([0,2,4], ["", "", ""]),
+#    yticks = ([0,2,4])
                   )
 end
 
