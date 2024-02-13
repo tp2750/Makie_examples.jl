@@ -1,0 +1,17 @@
+Hi Thomas,
+
+Keep in mind this is solely based on my interest and not something any of the teams have requested.
+However, if we have a tool like this, I am sure it will get used,
+as long as it does not have a 30 second delay each time we filter or refresh.
+
+It is for this csv file: /z/datasets/ds_mr_insilico/scheduled_notebooks/Gtdbtkfiles/gtdbtkmain_classification_summary.csv
+
+Main subsetting and filtering will be on these: division,phylum,class,order,family,genus,species
+
+However, not all the information is in there for the dashboard.
+I intend to also extract source, geolocation etc using the sequoia id in organism_id etc.
+
+Dashboard will have diversity metrics (still deciding what is the best one),
+and also sunburst chart of the subset chosen, and  an interactable geolocation map of different strains.
+For strains within same species I was also thinking of a similarity (or dissimilarity) plot so some kind
+so we can see how good we were at sampling diverse strains.
