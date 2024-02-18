@@ -18,6 +18,7 @@ makedocs(;
         "Home" => "index.md",
         "Interactive Histogram" => "interactive_histogram.md",
         "Sudoku" => "sudoku.md",
+        "plot3d" => "plot3d.md",
     ],
 )
 
